@@ -7,7 +7,7 @@ import { useBallAnimation } from '../hooks/useBallAnimation'
 import { ScatteredText } from './ScatteredText'
 
 export function BouncingBall() {
-  const { isAnimating, color, isShame, yellowChance, setYellowChance, animate, reset } = useBallAnimation()
+  const { count, isAnimating, color, isShame, yellowChance, setYellowChance, animate, reset } = useBallAnimation()
   const [showScatteredText, setShowScatteredText] = useState(false)
 
   const handleThrow = () => {
@@ -79,8 +79,10 @@ export function BouncingBall() {
               />
             </div>
           </>
-        )}
+        )
+        }
       </div>
+      <div className='mt-10'>Count: {count}</div>
       <ScatteredText isVisible={showScatteredText} />
     </div>
   )
